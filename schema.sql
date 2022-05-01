@@ -61,13 +61,20 @@ REFERENCES merchant(id);
 SELECT card, sum(amount) FROM transaction GROUP BY card;
 
 -- Part1 : Count transactions less than 2 per cardholder
-SELECT card, COUNT(amount)
+SELECT card, COUNT(*)
 FROM transaction
+WHERE amount < 2
 GROUP BY card;
 
 
 -- Part1 : Top 100 highest transactions made between 7:00am and 9:00am
+SELECT * FROM transaction;
 
+SELECT amount
+FROM transaction
+WHERE date = to_timestamp("07:00:00",  "09:00:00")
+ORDER BY amount DESC
+FETCH FIRST 100 ROWS ONLY;
 
 
 -- Part1 : Top 5 merchants prone to being hacked using small transactions
