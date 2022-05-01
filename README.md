@@ -10,10 +10,8 @@
 4. [Challenge](#challenge)
 
 ## Data Modeling
-
-Create an entity relationship diagram (ERD) by inspecting the provided CSV files.
-
-![](./images/ERD-export.png)
+* Create an entity relationship diagram (ERD) by inspecting the provided CSV files.
+  ![](./images/ERD-export.png)
 
 ## Part 1: SQL Queries
 * Some fraudsters hack a credit card by making several small transactions (generally less than $2.00), which are typically ignored by cardholders. 
@@ -89,16 +87,16 @@ Create an entity relationship diagram (ERD) by inspecting the provided CSV files
 
 ## Challenge
 
-Use the [challenge starter notebook](Starter_Files/challenge.ipynb) to code two Python functions:
+* Use the [challenge starter notebook](Starter_Files/challenge.ipynb) to code two Python functions:
 
 * One that uses standard deviation to identify anomalies for any cardholder.
 
 * Another that uses interquartile range to identify anomalies for any cardholder.
 
-For help with outliers detection, read the following articles:
+* For help with outliers detection, read the following articles:
 
-* [How to Calculate Outliers](https://www.wikihow.com/Calculate-Outliers)
+  * [How to Calculate Outliers](https://www.wikihow.com/Calculate-Outliers)
 
-* [Removing Outliers Using Standard Deviation in Python](https://www.kdnuggets.com/2017/02/removing-outliers-standard-deviation-python.html)
+  * [Removing Outliers Using Standard Deviation in Python](https://www.kdnuggets.com/2017/02/removing-outliers-standard-deviation-python.html)
 
-* [How to Use Statistics to Identify Outliers in Data](https://machinelearningmastery.com/how-to-use-statistics-to-identify-outliers-in-data/)
+  * [How to Use Statistics to Identify Outliers in Data](https://machinelearningmastery.com/how-to-use-statistics-to-identify-outliers-in-data/)
