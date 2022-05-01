@@ -68,11 +68,9 @@ GROUP BY card;
 
 
 -- Part1 : Top 100 highest transactions made between 7:00am and 9:00am
-SELECT * FROM transaction;
-
-SELECT amount
+SELECT date, amount
 FROM transaction
-WHERE date = to_timestamp("07:00:00",  "09:00:00")
+WHERE EXTRACT(HOUR FROM date) BETWEEN '07' AND '08'
 ORDER BY amount DESC
 FETCH FIRST 100 ROWS ONLY;
 
