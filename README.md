@@ -35,16 +35,18 @@
     ORDER BY tx_less_than_2 DESC;
     ```
     * **Output:** [Transaction count less than $2](./output/tx_less_than_2.csv)
-    * Is there any evidence to suggest that a credit card has been hacked? Explain your rationale.
-      * No 
-  * Take your investigation a step futher by considering the time period in which potentially fraudulent transactions are made. 
+    * *Question:* 
+      * ***Is there any evidence to suggest that a credit card has been hacked? Explain your rationale.***
+    * *Answer:* 
+      * ***Yes, Possily. With the assumption of the small transaction hack, cards with the highest count of transations less than $2 have possibly been hacked.***
+    * Take your investigation a step futher by considering the time period in which potentially fraudulent transactions are made. 
       ```
-      SELECT date, card, COUNT(amount) as tx_less_than_2
-      FROM transaction
-      WHERE amount < 2
-      GROUP BY card, date
-      ORDER BY tx_less_than_2 DESC;
-      ```
+        SELECT date, card, COUNT(amount) as tx_less_than_2
+        FROM transaction
+        WHERE amount < 2
+        GROUP BY card, date
+        ORDER BY tx_less_than_2 DESC;
+       ```
       * **Output:** [Small transactions grouped by dat](./output/tx_less_than_2.csv)
   * What are the top 100 highest transactions made between 7:00 am and 9:00 am? 
     ```
@@ -55,9 +57,16 @@
     FETCH FIRST 100 ROWS ONLY;
     ```
       * **Output:** [Top 100 transactions between 7:00am and 9:00am](./output/top_100_highest_tx_7am_to_9am.csv)
-      * Do you see any anomalous transactions that could be fraudulent?
-      * Is there a higher number of fraudulent transactions made during this time frame versus the rest of the day?
+      * *Question:*
+        * ***Do you see any anomalous transactions that could be fraudulent***
+      * *Answer:* 
+        * **No**
+      * *Question:* 
+        * ***Is there a higher number of fraudulent transactions made during this time frame versus the rest of the day?***
+      * *Answer:* 
+        * ***No, the data does not show correlation to higher number of fradulent transactions.***
       * If you answered yes to the previous question, explain why you think there might be fraudulent transactions during this time frame.
+        * ***N/A***
   * What are the top 5 merchants prone to being hacked using small transactions? 
     ```
     SELECT id_merchant, count(amount) as number_of_small_tx
@@ -80,7 +89,10 @@
       ![Cardholder 18 plot](./images/cardholder_18_line_plot.png) 
   * Next, to better compare their patterns, create a single line plot that contains both card holders' trend data.  
     ![Combined cardholder plots](./images/combined_carholder_2%2618_plots.png)
-  * What difference do you observe between the consumption patterns? Does the difference suggest a fraudulent transaction? Explain your rationale.
+  * *Question:* 
+    * ***What difference do you observe between the consumption patterns? Does the difference suggest a fraudulent transaction? Explain your rationale.***
+  * *Answer:*
+    * ***Cardholder 2 has a small dollar amount spending habits while Cardholder 18 has larger dollar amount spending habits. The difference in spending habbits can indicate fradulent activity on the card if the spending amount is unusually different. For Example, Cardholder 18 has multiple unusual transactions of less than $2, different from their usual larger dollar amount spendidng habits. This could suggest fradulent activity, however the data is non-conclusive.***
 
 * The CEO of the biggest customer of the firm suspects that someone has used her corporate credit card without authorization in the first quarter of 2018 to pay quite expensive restaurant bills. Again, for privacy reasons, you know only that the cardholder ID in question is 25.
 
