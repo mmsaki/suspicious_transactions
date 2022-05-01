@@ -57,7 +57,7 @@ REFERENCES merchant(id);
 
 
 
--- Part1 : Grouping transactions of each cardholder
+-- Part1 : Grouping transactions of each credit card
 SELECT card, sum(amount) as total_spent
 FROM transaction 
 GROUP BY card;
