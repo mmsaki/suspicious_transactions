@@ -66,7 +66,8 @@ GROUP BY card;
 SELECT card, COUNT(*) as tx_less_than_2
 FROM transaction
 WHERE amount < 2
-GROUP BY card;
+GROUP BY card
+ORDER BY tx_less_than_2 DESC;
 
 
 -- Part1 : Top 100 highest transactions made between 7:00am and 9:00am
