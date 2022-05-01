@@ -6,7 +6,6 @@ Create an entity relationship diagram (ERD) by inspecting the provided CSV files
 
 ![](./images/ERD-export.png)
 
-
 ## Data Analysis
 * Some fraudsters hack a credit card by making several small transactions (generally less than $2.00), which are typically ignored by cardholders. 
   * How can you isolate (or group) the transactions of each cardholder? 
