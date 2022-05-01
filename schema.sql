@@ -58,10 +58,12 @@ REFERENCES merchant(id);
 
 
 -- Part1 : Grouping transactions of each cardholder
-SELECT card, sum(amount) FROM transaction GROUP BY card;
+SELECT card, sum(amount) as total_spent
+FROM transaction 
+GROUP BY card;
 
--- Part1 : Count transactions less than 2 per cardholder
-SELECT card, COUNT(*)
+-- Part1 : Count transactions less than $2 per cardholder
+SELECT card, COUNT(*) as tx_less_than_2
 FROM transaction
 WHERE amount < 2
 GROUP BY card;
@@ -76,6 +78,11 @@ FETCH FIRST 100 ROWS ONLY;
 
 
 -- Part1 : Top 5 merchants prone to being hacked using small transactions
-
+SELECT id_merchant, count(amount) as number_of_small_tx
+FROM transaction
+WHERE amount < 2
+GROUP BY id_merchant
+ORDER BY count(amount) DESC
+LIMIT 5;
 
 
