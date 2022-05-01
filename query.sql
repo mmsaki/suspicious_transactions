@@ -35,9 +35,11 @@ LEFT JOIN credit_card
 ON transaction.card = credit_card.card
 WHERE credit_card.cardholder_id = 2 or credit_card.cardholder_id = 18;
 
--- Part 2: Transactions for cardholder_id 25 change to month names and day number
+-- Part 2: Transactions for cardholder_id 25 change to month names and day number from january to june
 SELECT to_char(transaction.date, 'month') as month, to_char(transaction.date, 'DD') as day, transaction.amount
 FROM transaction
 LEFT JOIN credit_card
 ON transaction.card = credit_card.card
-WHERE credit_card.cardholder_id = 25;
+WHERE credit_card.cardholder_id = 25
+and date >= '2018-01-01 00:00:00' 
+and date < '2018-07-01 00:00:00';
