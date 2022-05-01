@@ -10,10 +10,14 @@
 4. [Challenge](#challenge)
 
 ## Data Modeling
+**File:** [Schema](./schema.sql)
+
 * Create an entity relationship diagram (ERD) by inspecting the provided CSV files.
-  ![](./images/ERD-export.png)
+
+  ![Data Model](./images/ERD-export.png)
 
 ## Part 1: SQL Queries
+**File:** [Query.sql](./query.sql)
 * Some fraudsters hack a credit card by making several small transactions (generally less than $2.00), which are typically ignored by cardholders. 
   * How can you isolate (or group) the transactions of each cardholder? 
     ```
@@ -65,7 +69,7 @@
       * **Output:** [Top 5 merchants prone to small transaction hack](./output/top_5_merchants_small_tx_hack.csv)
 
 ## Part 2: Visual Analysis
-
+**File:** [Visualization Data Analysis](./visual_data_analysis.ipynb)
 * The two most important customers of the firm may have been hacked. Verify if there are any fraudulent transactions in their history. For privacy reasons, you only know that their cardholder IDs are 2 and 18.
 
   * Using hvPlot, create a line plot representing the time series of transactions over the course of the year for each cardholder separately. 
@@ -80,11 +84,12 @@
 * The CEO of the biggest customer of the firm suspects that someone has used her corporate credit card without authorization in the first quarter of 2018 to pay quite expensive restaurant bills. Again, for privacy reasons, you know only that the cardholder ID in question is 25.
 
   * Using Plotly Express, create a box plot, representing the expenditure data from January 2018 to June 2018 for cardholder ID 25.
-  
-  * Are there any outliers for cardholder ID 25? How many outliers are there per month?
+    ![Cardholder 25 January to June bar plot](./images/cardholder_25_bar_jan_to_june.png)
+    * Are there any outliers for cardholder ID 25? How many outliers are there per month?
 
-  * Do you notice any anomalies? Describe your observations and conclusions.
+    * Do you notice any anomalies? Describe your observations and conclusions.
 
+<!--
 ## Challenge
 
 * Use the [challenge starter notebook](Starter_Files/challenge.ipynb) to code two Python functions:
@@ -100,3 +105,4 @@
   * [Removing Outliers Using Standard Deviation in Python](https://www.kdnuggets.com/2017/02/removing-outliers-standard-deviation-python.html)
 
   * [How to Use Statistics to Identify Outliers in Data](https://machinelearningmastery.com/how-to-use-statistics-to-identify-outliers-in-data/)
+-->
