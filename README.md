@@ -1,51 +1,64 @@
 # Credit_Card_Fraud
 
-### Data Modeling
+## Data Modeling
 
 Create an entity relationship diagram (ERD) by inspecting the provided CSV files.
 
-Part of the challenge here is to figure out how many tables you should create, as well as what kind of relationships you need to define among the tables.
+![](./images/ERD-export.png)
 
 
-**Hints:** 
-
-* For the `credit_card` and `transaction` tables, the `card` column should be a VARCHAR(20) datatype rather than an INT.
-* For the `transaction` table, the `date` column should be a TIMESTAMP datatype rather than DATE.
-
-### Data Engineering
-
-Using your database model as a blueprint, create a database schema for each of your tables and relationships. Remember to specify data types, primary keys, foreign keys, and any other constraints you defined.
-
-After creating the database schema, import the data from the corresponding CSV files.
-
-### Data Analysis
-#### Part 1:
-
-The CFO of your firm has requested a report to help analyze potential fraudulent transactions. Using your newly created database, generate queries that will discover the information needed to answer the following questions, then use your repository's ReadME file to create a markdown report you can share with the CFO:
-
+## Data Analysis
 * Some fraudsters hack a credit card by making several small transactions (generally less than $2.00), which are typically ignored by cardholders. 
+  * How can you isolate (or group) the transactions of each cardholder? 
+    ```
+    SELECT card, sum(amount) as total_spent
+    FROM transaction 
+    GROUP BY card;
+    ```
+  * **Output:** [Group cardholder transactions](./grouping_cardholders.csv)
+    * Count the transactions that are less than $2.00 per cardholder. 
+    ```
+    SELECT card, COUNT(*) as tx_less_than_2
+    FROM transaction
+    WHERE amount < 2
+    GROUP BY card
+    ORDER BY tx_less_than_2 DESC;
+    ```
+  * **Output:** [Transaction count less than $2](./tx_less_than_2.csv)
+    * Is there any evidence to suggest that a credit card has been hacked? Explain your rationale.
+    * Take your investigation a step futher by considering the time period in which potentially fraudulent transactions are made. 
+      ```
+      SELECT date, card, COUNT(*) as tx_less_than_2
+      FROM transaction
+      WHERE amount < 2
+      GROUP BY card, date
+      ORDER BY tx_less_than_2 DESC;
+      ```
+    * **Output:** [Small transactions grouped by dat](./tx_less_than_2_groupby_date.csv)
+  * What are the top 100 highest transactions made between 7:00 am and 9:00 am? 
+    ```
+    SELECT date, amount
+    FROM transaction
+    WHERE EXTRACT(HOUR FROM date) BETWEEN '07' AND '08'
+    ORDER BY amount DESC
+    FETCH FIRST 100 ROWS ONLY;
+    ```
+    * **Output:** [Top 100 transactions between 7:00am and 9:00am](./top_100_highest_tx_7am_to_9am.csv)
+      * Do you see any anomalous transactions that could be fraudulent?
+      * Is there a higher number of fraudulent transactions made during this time frame versus the rest of the day?
+      * If you answered yes to the previous question, explain why you think there might be fraudulent transactions during this time frame.
+  * What are the top 5 merchants prone to being hacked using small transactions? 
+    ```
+    SELECT id_merchant, count(amount) as number_of_small_tx
+    FROM transaction
+    WHERE amount < 2
+    GROUP BY id_merchant
+    ORDER BY count(amount) DESC
+    LIMIT 5;
+    ```
+    * **Output:** [Top 5 merchants prone to small transaction hack](./top_5_merchants_small_tx_hack.csv)
 
-  * How can you isolate (or group) the transactions of each cardholder?
-
-  * Count the transactions that are less than $2.00 per cardholder. 
-  
-  * Is there any evidence to suggest that a credit card has been hacked? Explain your rationale.
-
-* Take your investigation a step futher by considering the time period in which potentially fraudulent transactions are made. 
-
-  * What are the top 100 highest transactions made between 7:00 am and 9:00 am?
-
-  * Do you see any anomalous transactions that could be fraudulent?
-
-  * Is there a higher number of fraudulent transactions made during this time frame versus the rest of the day?
-
-  * If you answered yes to the previous question, explain why you think there might be fraudulent transactions during this time frame.
-
-* What are the top 5 merchants prone to being hacked using small transactions?
-
-* Create a view for each of your queries.
-
-#### Part 2:
+## Part 2:
 
 Your CFO has also requested detailed trends data on specific card holders. Use the [starter notebook](Starter_Files/challenge.ipynb) to query your database and generate visualizations that supply the requested information as follows, then add your visualizations and observations to your markdown report:      
 
@@ -65,7 +78,7 @@ Your CFO has also requested detailed trends data on specific card holders. Use t
 
   * Do you notice any anomalies? Describe your observations and conclusions.
 
-### Challenge
+## Challenge
 
 Another approach to identifying fraudulent transactions is to look for outliers in the data. Standard deviation or quartiles are often used to detect outliers.
 
@@ -83,7 +96,7 @@ For help with outliers detection, read the following articles:
 
 * [How to Use Statistics to Identify Outliers in Data](https://machinelearningmastery.com/how-to-use-statistics-to-identify-outliers-in-data/)
 
-### Submission
+## Submission
 
 Post a link to your GitHub repository in BootCamp Spot. The following should be included your repo:
 
@@ -99,55 +112,55 @@ Post a link to your GitHub repository in BootCamp Spot. The following should be 
 
 * **Optional:** The Jupyter Notebook containing the optional challenge assignment.
 
-### Hint
+## Hint
 
 For comparing time and dates, take a look at the [date/time functions and operators](https://www.postgresql.org/docs/8.0/functions-datetime.html) in the PostgreSQL documentation.
 
 ---
-### Requirements
+## Requirements
 
-#### Data Modeling  (20 points)
+## Data Modeling  (20 points)
 
-##### To receive all points, your code must:
+## To receive all points, your code must:
 
 * Define a database model. (10 points)
 * Use the defined model to create a PostgreSQL database. (10 points)
 
-#### Data Engineering  (20 points)
+## Data Engineering  (20 points)
 
-##### To receive all points, your code must:
+## To receive all points, your code must:
 
 * Create a database schema for each table and relationship. (5 points)
 * Specify the data types. (5 points)
 * Define primary keys. (5 points)
 * Define foreign keys. (5 points)
 
-#### Data Analysis  (30 points)
+## Data Analysis  (30 points)
 
-##### To receive all points, your code must:
+## To receive all points, your code must:
 
 * Identify fraudulent transactions. (10 points)
 * Utilize SQL and Pandas DataFrames for a report within Jupyter Notebook. (10 points)
 * Provide a visual data analysis of fraudulent transactions using Pandas, Plotly Express, hvPlot, and SQLAlchemy to create the visualizations. (10 points)
 
-#### Coding Conventions and Formatting (10 points)
+## Coding Conventions and Formatting (10 points)
 
-##### To receive all points, your code must:
+## To receive all points, your code must:
 
 * Place imports at the beginning of the file, just after any module comments and docstrings and before module globals and constants. (3 points)
 * Name functions and variables with lowercase characters and with words separated by underscores. (2 points)
 * Follow Don't Repeat Yourself (DRY) principles by creating maintainable and reusable code. (3 points)
 * Use concise logic and creative engineering where possible. (2 points)
 
-#### Deployment and Submission (10 points)
+## Deployment and Submission (10 points)
 
-##### To receive all points, you must:
+## To receive all points, you must:
 
 * Submit a link to a GitHub repository that’s cloned to your local machine and contains your files. (5 points)
 * Include appropriate commit messages in your files. (5 points)
 
-#### Code Comments (10 points)
+## Code Comments (10 points)
 
-##### To receive all points, your code must:
+## To receive all points, your code must:
 
 * Be well commented with concise, relevant notes that other developers can understand. (10 points)
