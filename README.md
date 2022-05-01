@@ -92,15 +92,21 @@
   * *Question:* 
     * ***What difference do you observe between the consumption patterns? Does the difference suggest a fraudulent transaction? Explain your rationale.***
   * *Answer:*
-    * ***Cardholder 2 has a small dollar amount spending habits while Cardholder 18 has larger dollar amount spending habits. The difference in spending habbits can indicate fradulent activity on the card if the spending amount is unusually different. For Example, Cardholder 18 has multiple unusual transactions of less than $2, different from their usual larger dollar amount spendidng habits. This could suggest fradulent activity, however the data is non-conclusive.***
+    * ***Cardholder 2 has a small dollar amount spending habit while Cardholder 18 has larger dollar amount spending habits. The difference in spending amounts can indicate fradulent activity on the card if the spending amount is or significantly different from their normal spending. For Example, Cardholder 18 has multiple unusual transactions of less than $2, different from their usual larger dollar amount spendidng habits. This could suggest fradulent activity, however the data is non-conclusive.***
 
 * The CEO of the biggest customer of the firm suspects that someone has used her corporate credit card without authorization in the first quarter of 2018 to pay quite expensive restaurant bills. Again, for privacy reasons, you know only that the cardholder ID in question is 25.
 
   * Using Plotly Express, create a box plot, representing the expenditure data from January 2018 to June 2018 for cardholder ID 25.
     ![Cardholder 25 January to June bar plot](./images/cardholder_25_bar_jan_to_june.png)
-    * Are there any outliers for cardholder ID 25? How many outliers are there per month?
 
-    * Do you notice any anomalies? Describe your observations and conclusions.
+    * *Question:*
+      * ***Are there any outliers for cardholder ID 25? How many outliers are there per month?***
+    * *Answer:*
+      * ***Yes. There are multiple putliers at least once a month***
+    * *Question:*
+      * ***Do you notice any anomalies? Describe your observations and conclusions.***
+    * *Answer:*
+      * ***Yes, there is anomalies. Cardholder 25 has extremely large dollar amount transactions and extremely low dollar amount transactions.***
 
 <!--
 ## Challenge
