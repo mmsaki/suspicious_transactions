@@ -58,7 +58,6 @@ REFERENCES merchant(id);
 
 
 -- Part1 : Grouping transactions of each cardholder
-
 SELECT card, sum(amount) FROM transaction GROUP BY card;
 
 -- Part1 : Count transactions less than 2 per cardholder
