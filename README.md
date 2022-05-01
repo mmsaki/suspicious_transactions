@@ -35,8 +35,9 @@
     ORDER BY tx_less_than_2 DESC;
     ```
     * **Output:** [Transaction count less than $2](./output/tx_less_than_2.csv)
-  * Is there any evidence to suggest that a credit card has been hacked? Explain your rationale.
-    * Take your investigation a step futher by considering the time period in which potentially fraudulent transactions are made. 
+    * Is there any evidence to suggest that a credit card has been hacked? Explain your rationale.
+      * No 
+  * Take your investigation a step futher by considering the time period in which potentially fraudulent transactions are made. 
       ```
       SELECT date, card, COUNT(*) as tx_less_than_2
       FROM transaction
@@ -44,7 +45,7 @@
       GROUP BY card, date
       ORDER BY tx_less_than_2 DESC;
       ```
-      * **Output:** [Small transactions grouped by dat](./output/tx_less_than_2_groupby_date.csv)
+      * **Output:** [Small transactions grouped by dat](./output/tx_less_than_2.csv)
   * What are the top 100 highest transactions made between 7:00 am and 9:00 am? 
     ```
     SELECT date, amount
