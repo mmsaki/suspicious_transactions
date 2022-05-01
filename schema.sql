@@ -61,7 +61,9 @@ REFERENCES merchant(id);
 SELECT card, sum(amount) FROM transaction GROUP BY card;
 
 -- Part1 : Count transactions less than 2 per cardholder
-
+SELECT card, COUNT(amount)
+FROM transaction
+GROUP BY card;
 
 
 -- Part1 : Top 100 highest transactions made between 7:00am and 9:00am
