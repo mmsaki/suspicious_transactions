@@ -5,10 +5,17 @@ FROM transaction
 GROUP BY card;
 
 -- Part1 : Count transactions less than $2 per cardholder
-SELECT card, COUNT(*) as tx_less_than_2
+SELECT card, COUNT(amount) as tx_less_than_2
 FROM transaction
 WHERE amount < 2
 GROUP BY card
+ORDER BY tx_less_than_2 DESC;
+
+-- Part1 : Count transactions less than $2 per cardholder group by date
+SELECT date, card, COUNT(amount) as tx_less_than_2
+FROM transaction
+WHERE amount < 2
+GROUP BY card, date
 ORDER BY tx_less_than_2 DESC;
 
 
