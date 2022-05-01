@@ -15,7 +15,7 @@ Create an entity relationship diagram (ERD) by inspecting the provided CSV files
     FROM transaction 
     GROUP BY card;
     ```
-  * **Output:** [Group cardholder transactions](./grouping_cardholders.csv)
+  * **Output:** [Group cardholder transactions](./output/grouping_cardholders.csv)
     * Count the transactions that are less than $2.00 per cardholder. 
     ```
     SELECT card, COUNT(*) as tx_less_than_2
@@ -24,7 +24,7 @@ Create an entity relationship diagram (ERD) by inspecting the provided CSV files
     GROUP BY card
     ORDER BY tx_less_than_2 DESC;
     ```
-  * **Output:** [Transaction count less than $2](./tx_less_than_2.csv)
+  * **Output:** [Transaction count less than $2](./output/tx_less_than_2.csv)
     * Is there any evidence to suggest that a credit card has been hacked? Explain your rationale.
     * Take your investigation a step futher by considering the time period in which potentially fraudulent transactions are made. 
       ```
@@ -34,7 +34,7 @@ Create an entity relationship diagram (ERD) by inspecting the provided CSV files
       GROUP BY card, date
       ORDER BY tx_less_than_2 DESC;
       ```
-    * **Output:** [Small transactions grouped by dat](./tx_less_than_2_groupby_date.csv)
+    * **Output:** [Small transactions grouped by dat](./output/tx_less_than_2_groupby_date.csv)
   * What are the top 100 highest transactions made between 7:00 am and 9:00 am? 
     ```
     SELECT date, amount
@@ -43,7 +43,7 @@ Create an entity relationship diagram (ERD) by inspecting the provided CSV files
     ORDER BY amount DESC
     FETCH FIRST 100 ROWS ONLY;
     ```
-    * **Output:** [Top 100 transactions between 7:00am and 9:00am](./top_100_highest_tx_7am_to_9am.csv)
+    * **Output:** [Top 100 transactions between 7:00am and 9:00am](./output/top_100_highest_tx_7am_to_9am.csv)
       * Do you see any anomalous transactions that could be fraudulent?
       * Is there a higher number of fraudulent transactions made during this time frame versus the rest of the day?
       * If you answered yes to the previous question, explain why you think there might be fraudulent transactions during this time frame.
@@ -56,7 +56,7 @@ Create an entity relationship diagram (ERD) by inspecting the provided CSV files
     ORDER BY count(amount) DESC
     LIMIT 5;
     ```
-    * **Output:** [Top 5 merchants prone to small transaction hack](./top_5_merchants_small_tx_hack.csv)
+    * **Output:** [Top 5 merchants prone to small transaction hack](./output/top_5_merchants_small_tx_hack.csv)
 
 ## Part 2:
 
