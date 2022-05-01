@@ -28,7 +28,7 @@
     * **Output:** [Group cardholder transactions](./output/grouping_cardholders.csv)
   * Count the transactions that are less than $2.00 per cardholder. 
     ```
-    SELECT card, COUNT(*) as tx_less_than_2
+    SELECT card, COUNT(amount) as tx_less_than_2
     FROM transaction
     WHERE amount < 2
     GROUP BY card
@@ -39,7 +39,7 @@
       * No 
   * Take your investigation a step futher by considering the time period in which potentially fraudulent transactions are made. 
       ```
-      SELECT date, card, COUNT(*) as tx_less_than_2
+      SELECT date, card, COUNT(amount) as tx_less_than_2
       FROM transaction
       WHERE amount < 2
       GROUP BY card, date
