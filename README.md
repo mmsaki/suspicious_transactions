@@ -10,7 +10,7 @@
 4. [Challenge](#challenge)
 
 ## Data Modeling
-**File:** [Schema](./schema.sql)
+**File:** [Schema.sql](./schema.sql)
 
 - [x] Create an entity relationship diagram (ERD) by inspecting the provided CSV files.
 
