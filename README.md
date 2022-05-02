@@ -1,24 +1,21 @@
 # Suspicious Transactions
 
-<!--- <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapers.moviemania.io%2Fdesktop%2Fmovie%2F4133%2F2491ad%2Fblow-desktop-wallpaper.jpg%3Fw%3D2552%26h%3D1442&f=1&nofb=1" alt="ether" width="100%"/>
--->
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapers.moviemania.io%2Fdesktop%2Fmovie%2F4133%2F2491ad%2Fblow-desktop-wallpaper.jpg%3Fw%3D2552%26h%3D1442&f=1&nofb=1" alt="ether" width="100%"/>
+
 
 ## Table of Contents
 1. [Data Modeling](#data-modeling)
 2. [Part 1: SQL Queries](#part-1-sql-queries)
 3. [Part 2: Visual Analysis](#part-2-visual-analysis)
-4. [Challenge](#challenge)
+4. [Results]()
 
 ## Data Modeling
-**File:** [Schema.sql](./schema.sql)
 
 - [x] Create an entity relationship diagram (ERD) by inspecting the provided CSV files.
 
   ![Data Model](./images/database_ERD.png)
 
 ## Part 1: SQL Queries
-
-**File:** [Query.sql](./query.sql) <br>
 
 Some fraudsters hack a credit card by making several small transactions (generally less than $2.00), which are typically ignored by cardholders.
 
@@ -105,8 +102,6 @@ Some fraudsters hack a credit card by making several small transactions (general
 
 ## Part 2: Visual Analysis
 
-**File:** [Visualization Data Analysis](./visual_data_analysis.ipynb) <br>
-
 The two most important customers of the firm may have been hacked. Verify if there are any fraudulent transactions in their history. For privacy reasons, you only know that their cardholder IDs are 2 and 18.
 
   - [x] Using hvPlot, create a line plot representing the time series of transactions over the course of the year for each cardholder separately. 
@@ -135,6 +130,14 @@ The two most important customers of the firm may have been hacked. Verify if the
   - [x] *Question: Do you notice any anomalies? Describe your observations and conclusions.*
     - *Answer:*
       - ***Yes, there is anomalies. Cardholder 25 has extremely large dollar amount transactions and extremely low dollar amount transactions.***
+
+## Results
+- [ ] [ERD Data Model](./images/database_ERD.png)
+- [ ] [Schema.sql](./schema.sql)
+- [ ] [Query.sql](./query.sql)
+- [ ] [Visualization Analysis](./visual_data_analysis.ipynb) 
+
+
 
 <!--
 ## Challenge
