@@ -34,7 +34,7 @@
     GROUP BY card
     ORDER BY tx_less_than_2 DESC;
     ```
-    * **Output:** [Small transaction count of less than $2](./output/tx_less_than_2.csv)
+    * **Output:** [Small transactions count of less than $2](./output/tx_less_than_2.csv)
     * *Question:* 
       * ***Is there any evidence to suggest that a credit card has been hacked? Explain your rationale.***
     * *Answer:* 
