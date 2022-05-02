@@ -1,8 +1,16 @@
-
--- Part1 : Grouping transactions of each credit card
-SELECT card, sum(amount) as total_spent
+-- Part1 : Grouping transactions of each credit card only
+SELECT card
 FROM transaction 
 GROUP BY card;
+
+-- Grouping by Credit Card and joining name, card holder id and their total transaction amounts
+SELECT card_holder.name, credit_card.cardholder_id, transaction.card, sum(amount) as total_spent
+FROM transaction 
+LEFT JOIN credit_card
+on transaction.card = credit_card.card
+LEFT JOIN card_holder
+on credit_card.cardholder_id = card_holder.id
+GROUP BY transaction.card, credit_card.cardholder_id, card_holder.name;
 
 -- Part1 : Count transactions less than $2 per cardholder
 SELECT card, COUNT(amount) as tx_less_than_2
@@ -18,14 +26,12 @@ WHERE amount < 2
 GROUP BY card, date
 ORDER BY tx_less_than_2 DESC;
 
-
 -- Part1 : Top 100 highest transactions made between 7:00am and 9:00am
 SELECT date, amount
 FROM transaction
 WHERE EXTRACT(HOUR FROM date) BETWEEN '07' AND '08'
 ORDER BY amount DESC
 FETCH FIRST 100 ROWS ONLY;
-
 
 -- Part1 : Top 5 merchants prone to being hacked using small transactions
 SELECT id_merchant, count(amount) as number_of_small_tx
