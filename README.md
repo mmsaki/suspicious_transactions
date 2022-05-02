@@ -25,7 +25,7 @@ Some fraudsters hack a credit card by making several small transactions (general
   - [x] How can you isolate (or group) the transactions of each cardholder? 
 
     ```sql
-    -- Grouping transactions of each credit card only
+    -- Grouping transactions of each card returning card numbers only
     SELECT card
     FROM transaction 
     GROUP BY card;
