@@ -63,6 +63,7 @@ Some fraudsters hack a credit card by making several small transactions (general
   - [x] What are the top 100 highest transactions made between 7:00 am and 9:00 am? 
 
     ```
+    ---
     query:
     SELECT date, amount
     FROM transaction
