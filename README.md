@@ -25,9 +25,19 @@ Some fraudsters hack a credit card by making several small transactions (general
   - [x] How can you isolate (or group) the transactions of each cardholder? 
 
     ```sql
-    SELECT card, sum(amount) as total_spent
+    -- Part1 : Grouping transactions of each credit card only
+    SELECT card
     FROM transaction 
     GROUP BY card;
+
+    -- Grouping by Credit Card and joining name, card holder id and their total transaction amounts
+    SELECT card_holder.name, credit_card.cardholder_id, transaction.card, sum(amount) as total_spent
+    FROM transaction 
+    LEFT JOIN credit_card
+    on transaction.card = credit_card.card
+    LEFT JOIN card_holder
+    on credit_card.cardholder_id = card_holder.id
+    GROUP BY transaction.card, credit_card.cardholder_id, card_holder.name;
     ```
     - **Output:** [Group cardholder transactions](./output/grouping_cardholders.csv)
 
