@@ -1,6 +1,6 @@
 # Suspicious Transactions
 
-<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapers.moviemania.io%2Fdesktop%2Fmovie%2F4133%2F2491ad%2Fblow-desktop-wallpaper.jpg%3Fw%3D2552%26h%3D1442&f=1&nofb=1" alt="ether" width="100%"/>
+<img src="https://static.hollywoodreporter.com/sites/default/files/2019/06/vault_still_3-928x523.jpg" alt="ether" width="100%"/>
 
 
 ## Table of Contents
@@ -132,10 +132,10 @@ The two most important customers of the firm may have been hacked. Verify if the
       - ***Yes, there is anomalies. Cardholder 25 has extremely large dollar amount transactions and extremely low dollar amount transactions.***
 
 ## Results
-- [ ] [ERD Data Model](./images/database_ERD.png)
-- [ ] [Schema.sql](./schema.sql)
-- [ ] [Query.sql](./query.sql)
-- [ ] [Visualization Analysis](./visual_data_analysis.ipynb) 
+- [ERD Data Model](./images/database_ERD.png)
+- [Schema.sql](./schema.sql)
+- [Query.sql](./query.sql)
+- [Visualization Analysis](./visual_data_analysis.ipynb) 
 
 
 
