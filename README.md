@@ -91,7 +91,7 @@ The two most important customers of the firm may have been hacked. Verify if the
   - [x] *Question:* 
     * ***What difference do you observe between the consumption patterns? Does the difference suggest a fraudulent transaction? Explain your rationale.***
   - [x] *Answer:*
-    * ***Cardholder 2 has a small dollar amount spending habit while Cardholder 18 has larger dollar amount spending habits. The difference in spending amounts can indicate fradulent activity on the card if the spending amount is or significantly different from their normal spending. For Example, Cardholder 18 has multiple unusual transactions of less than $2, different from their usual larger dollar amount spendidng habits. This could suggest fradulent activity, however the data is non-conclusive.***
+    * ***Cardholder 2 has a small dollar amount spending habit while Cardholder 18 has a larger dollar amount spending habit. The difference in spending amounts can indicate fradulent activity on the card if the spending amount is or significantly different from their normal spending. For Example, Cardholder 18 has multiple unusual transactions of less than $2, different from their usual larger dollar amount spendidng habits. This could suggest fradulent activity, however the data is non-conclusive.***
 
 The CEO of the biggest customer of the firm suspects that someone has used her corporate credit card without authorization in the first quarter of 2018 to pay quite expensive restaurant bills. Again, for privacy reasons, you know only that the cardholder ID in question is 25.
 
