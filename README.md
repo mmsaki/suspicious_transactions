@@ -81,14 +81,14 @@ Some fraudsters hack a credit card by making several small transactions (general
     ```
       - **Output:** [Top 100 transactions between 7:00am and 9:00am](./output/top_100_highest_tx_7am_to_9am.csv)
 
-      - [x] *Question: Do you see any anomalous transactions that could be fraudulent*
-        - *Answer:* 
-          - **No**
-      - [x] *Question: Is there a higher number of fraudulent transactions made during this time frame versus the rest of the day?*
-        - *Answer:* 
-          - ***No, the data does not show any correlation to higher number of fradulent transactions.***
-      - [ ] If you answered yes to the previous question, explain why you think there might be fraudulent transactions during this time frame.
-        - ***N/A***
+    - [x] *Question: Do you see any anomalous transactions that could be fraudulent*
+      - *Answer:* 
+        - **No**
+    - [x] *Question: Is there a higher number of fraudulent transactions made during this time frame versus the rest of the day?*
+      - *Answer:* 
+        - ***No, the data does not show any correlation to higher number of fradulent transactions.***
+    - [ ] If you answered yes to the previous question, explain why you think there might be fraudulent transactions during this time frame.
+      - ***N/A***
 
   - [x] What are the top 5 merchants prone to being hacked using small transactions? 
 
