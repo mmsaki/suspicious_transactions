@@ -5,7 +5,7 @@
 
 ## Table of Contents
 1. [Data Modeling](#data-modeling)
-2. [Part 1: SQL Queries](#part-1-sql-queries)
+2. [Part 1: SQL](#part-1-sql)
 3. [Part 2: Visual Analysis](#part-2-visual-analysis)
 4. [Results](#results)
 
@@ -15,7 +15,7 @@
 
   ![Data Model](./images/database_ERD.png)
 
-## Part 1: SQL Queries
+## Part 1: SQL
 
 Some fraudsters hack a credit card by making several small transactions (generally less than $2.00), which are typically ignored by cardholders.
 
