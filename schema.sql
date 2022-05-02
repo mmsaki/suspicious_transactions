@@ -34,7 +34,7 @@ CREATE TABLE merchant_category (
 CREATE TABLE transaction (
     id int   NOT NULL PRIMARY KEY,
     date timestamp   NOT NULL,
-    amount FLOAT   NOT NULL,
+    amount FLOAT(24)   NOT NULL,
     card VARCHAR(20)   NOT NULL,
     id_merchant int   NOT NULL
 );
