@@ -14,7 +14,7 @@
 
 * Create an entity relationship diagram (ERD) by inspecting the provided CSV files.
 
-  ![Data Model](./images/ERD-export.png)
+  ![Data Model](./images/database_ERD.png)
 
 ## Part 1: SQL Queries
 **File:** [Query.sql](./query.sql)
@@ -47,7 +47,7 @@
         GROUP BY card, date
         ORDER BY tx_less_than_2 DESC;
        ```
-      * **Output:** [Small transactions grouped by dat](./output/tx_less_than_2.csv)
+      * **Output:** [Small transactions grouped by date](./output/tx_less_than_2_groupby_date.csv)
   * What are the top 100 highest transactions made between 7:00 am and 9:00 am? 
     ```
     SELECT date, amount
