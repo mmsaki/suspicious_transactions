@@ -12,21 +12,21 @@
 ## Data Modeling
 **File:** [Schema](./schema.sql)
 
-* Create an entity relationship diagram (ERD) by inspecting the provided CSV files.
+- [x] Create an entity relationship diagram (ERD) by inspecting the provided CSV files.
 
   ![Data Model](./images/database_ERD.png)
 
 ## Part 1: SQL Queries
 **File:** [Query.sql](./query.sql)
 * Some fraudsters hack a credit card by making several small transactions (generally less than $2.00), which are typically ignored by cardholders. 
-  * How can you isolate (or group) the transactions of each cardholder? 
+  - [x] How can you isolate (or group) the transactions of each cardholder? 
     ```
     SELECT card, sum(amount) as total_spent
     FROM transaction 
     GROUP BY card;
     ```
     * **Output:** [Group cardholder transactions](./output/grouping_cardholders.csv)
-  * Count the transactions that are less than $2.00 per cardholder. 
+  - [x] Count the transactions that are less than $2.00 per cardholder. 
     ```
     SELECT card, COUNT(amount) as tx_less_than_2
     FROM transaction
