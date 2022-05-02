@@ -63,7 +63,7 @@ Some fraudsters hack a credit card by making several small transactions (general
       - [x] *Question:* 
         - ***Is there a higher number of fraudulent transactions made during this time frame versus the rest of the day?***
       - [x] *Answer:* 
-        - ***No, the data does not show correlation to higher number of fradulent transactions.***
+        - ***No, the data does not show any correlation to higher number of fradulent transactions.***
       - [] If you answered yes to the previous question, explain why you think there might be fraudulent transactions during this time frame.
         - ***N/A***
   - [x] What are the top 5 merchants prone to being hacked using small transactions? 
