@@ -7,7 +7,7 @@
 1. [Data Modeling](#data-modeling)
 2. [Part 1: SQL Queries](#part-1-sql-queries)
 3. [Part 2: Visual Analysis](#part-2-visual-analysis)
-4. [Results]()
+4. [Results](#results)
 
 ## Data Modeling
 
