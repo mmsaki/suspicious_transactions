@@ -124,12 +124,14 @@ The two most important customers of the firm may have been hacked. Verify if the
 
     ![Cardholder 25 January to June bar plot](./images/cardholder_25_bar_jan_to_june.png)
 
+  ```markdown
   - [x] *Question: Are there any outliers for cardholder ID 25? How many outliers are there per month?*
     - *Answer:*
       - ***Yes. There are multiple putliers at least once a month***
   - [x] *Question: Do you notice any anomalies? Describe your observations and conclusions.*
     - *Answer:*
       - ***Yes, there is anomalies. Cardholder 25 has extremely large dollar amount transactions and extremely low dollar amount transactions.***
+  ```
 
 ## Results
 - [ERD Data Model](./images/database_ERD.png)
