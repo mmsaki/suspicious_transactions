@@ -52,8 +52,8 @@ Some fraudsters hack a credit card by making several small transactions (general
 
     ```yaml
     ---
-    Question: |
-      Is there any evidence to suggest that a credit card has been hacked? Explain your rationale.
+    # Question
+    Is there any evidence to suggest that a credit card has been hacked? Explain your rationale.
       
     Answer: | 
       Yes, Possily. With the assumption of the small transaction hack, cards with the highest count of transations less than $2 have possibly been hacked.
@@ -127,8 +127,7 @@ The two most important customers of the firm may have been hacked. Verify if the
 
   ```yaml
    # Question 
-  |
-    What difference do you observe between the consumption patterns? Does the difference suggest a fraudulent transaction? Explain your rationale.
+  What difference do you observe between the consumption patterns? Does the difference suggest a fraudulent transaction? Explain your rationale.
    
   Answer: | 
     Cardholder 2 has a small dollar amount spending habit while Cardholder 18 has a larger dollar amount spending habit. The difference in spending amounts can indicate fradulent activity on the card if the spending amount is significantly different from their normal spending. For Example, Cardholder 18 has transactions of less than $2, different from their usual larger dollar amount spendidng habit. This could suggest fradulent activity, however this data alone is inconclusive.
