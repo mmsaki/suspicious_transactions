@@ -127,7 +127,7 @@ The two most important customers of the firm may have been hacked. Verify if the
   - Question: | Are there any outliers for cardholder ID 25? How many outliers are there per month?
     - Answer: | Yes. There are multiple putliers at least once a month
   - Question: | Do you notice any anomalies? Describe your observations and conclusions.
-    - Answer: | Yes, there is anomalies. Cardholder 25 has extremely large dollar amount transactions and extremely low dollar amount transactions.
+    - Answer: | Yes, there are anomalies. Cardholder 25 has extremely large dollar amount transactions and extremely low dollar amount transactions.
   ```
 ## Results
 - [ERD Data Model](./images/database_ERD.png)
