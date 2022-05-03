@@ -50,14 +50,14 @@ Some fraudsters hack a credit card by making several small transactions (general
     ```
     - **Output:** [Small transactions count of less than $2](./output/tx_less_than_2.csv)
 
-    ```yaml
     ---
-    # Question
+    - [X] Question
     Is there any evidence to suggest that a credit card has been hacked? Explain your rationale.
       
     Answer: | 
       Yes, Possily. With the assumption of the small transaction hack, cards with the highest count of transations less than $2 have possibly been hacked.
-    ```
+
+    ---
     - [x] Take your investigation a step futher by considering the time period in which potentially fraudulent transactions are made. 
 
       ```sql
@@ -81,20 +81,16 @@ Some fraudsters hack a credit card by making several small transactions (general
     FETCH FIRST 100 ROWS ONLY;
     ```
       - **Output:** [Top 100 transactions between 7:00am and 9:00am](./output/top_100_highest_tx_7am_to_9am.csv)
-  ```yaml
+  
   ---
-  Question: | 
-    Do you see any anomalous transactions that could be fraudulent
-  Answer: | 
-    No.
+  - [x] Question: Do you see any anomalous transactions that could be fraudulent
+    - Answer: No.
+  - [x] Question: Is there a higher number of fraudulent transactions made during this time frame versus the rest of the day?
+    - Answer: No, the data does not show any correlation to higher number of fradulent transactions.
+
+ - If you answered yes to the previous question, explain why you think there might be fraudulent transactions during this time frame.
+
   ---
-  Question: |
-    Is there a higher number of fraudulent transactions made during this time frame versus the rest of the day?
-  Answer: | 
-      No, the data does not show any correlation to higher number of fradulent transactions.
-  ----
-  # If you answered yes to the previous question, explain why you think there might be fraudulent transactions during this time frame.
-  ```
 
   - [x] What are the top 5 merchants prone to being hacked using small transactions? 
 
@@ -125,13 +121,14 @@ The two most important customers of the firm may have been hacked. Verify if the
 
     ![Combined cardholder plots](./images/combined_carholder_2%2618_plots.png)
 
-  ```yaml
-   # Question 
+---
+
+  - [x] Question 
   What difference do you observe between the consumption patterns? Does the difference suggest a fraudulent transaction? Explain your rationale.
    
-  Answer: | 
-    Cardholder 2 has a small dollar amount spending habit while Cardholder 18 has a larger dollar amount spending habit. The difference in spending amounts can indicate fradulent activity on the card if the spending amount is significantly different from their normal spending. For Example, Cardholder 18 has transactions of less than $2, different from their usual larger dollar amount spendidng habit. This could suggest fradulent activity, however this data alone is inconclusive.
-  ```
+  - Answer: Cardholder 2 has a small dollar amount spending habit while Cardholder 18 has a larger dollar amount spending habit. The difference in spending amounts can indicate fradulent activity on the card if the spending amount is significantly different from their normal spending. For Example, Cardholder 18 has transactions of less than $2, different from their usual larger dollar amount spendidng habit. This could suggest fradulent activity, however this data alone is inconclusive.
+
+---
   - [x] Using Plotly Express, create a box plot, representing the expenditure data from January 2018 to June 2018 for cardholder ID 25.
 
     ![Cardholder 25 January to June bar plot](./images/cardholder_25_bar_jan_to_june.png)
