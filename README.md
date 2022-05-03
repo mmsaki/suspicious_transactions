@@ -126,12 +126,12 @@ The two most important customers of the firm may have been hacked. Verify if the
     ![Combined cardholder plots](./images/combined_carholder_2%2618_plots.png)
 
   ```yaml
-  ---
-   # Question |
-  What difference do you observe between the consumption patterns? Does the difference suggest a fraudulent transaction? Explain your rationale.
+   # Question 
+  |
+    What difference do you observe between the consumption patterns? Does the difference suggest a fraudulent transaction? Explain your rationale.
    
   Answer: | 
-  Cardholder 2 has a small dollar amount spending habit while Cardholder 18 has a larger dollar amount spending habit. The difference in spending amounts can indicate fradulent activity on the card if the spending amount is significantly different from their normal spending. For Example, Cardholder 18 has transactions of less than $2, different from their usual larger dollar amount spendidng habit. This could suggest fradulent activity, however this data alone is inconclusive.
+    Cardholder 2 has a small dollar amount spending habit while Cardholder 18 has a larger dollar amount spending habit. The difference in spending amounts can indicate fradulent activity on the card if the spending amount is significantly different from their normal spending. For Example, Cardholder 18 has transactions of less than $2, different from their usual larger dollar amount spendidng habit. This could suggest fradulent activity, however this data alone is inconclusive.
   ```
   - [x] Using Plotly Express, create a box plot, representing the expenditure data from January 2018 to June 2018 for cardholder ID 25.
 
