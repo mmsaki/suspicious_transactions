@@ -1,8 +1,5 @@
 # Suspicious Transactions
 
-<img src="https://static.hollywoodreporter.com/sites/default/files/2019/06/vault_still_3-928x523.jpg" alt="ether" width="100%"/>
-
-
 ## Table of Contents
 1. [Data Modeling](#data-modeling)
 2. [Part 1: SQL](#part-1-sql)
